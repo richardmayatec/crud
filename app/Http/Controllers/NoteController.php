@@ -26,7 +26,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        return view('notes.create');
     }
 
     /**
@@ -37,7 +37,13 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Note::create([
+            'title' =>  $request->title,
+            'content'   =>  $request->content
+        ]);
+
+        // return to_route('notes.index');
+        return redirect()->route('notes.index');
     }
 
     /**

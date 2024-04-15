@@ -14,8 +14,14 @@
         <div class="row mb-4">
             <div class="col">
                 <header class="bg-danger py-3 text-center">
-                    <h1 class="mb-0 text-white">Notes</h1>
+                    <h1 class="mb-0 text-white">Notas</h1>
                 </header>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col text-end">
+                <a href="{{ route('notes.create') }}" class="btn btn-success">Nueva Nota +</a>
             </div>
         </div>
 
