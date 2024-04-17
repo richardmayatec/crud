@@ -66,7 +66,8 @@ class NoteController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('notes.edit')
+            ->with('note', Note::nota_por_id($id));
     }
 
     /**
