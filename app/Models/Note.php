@@ -9,13 +9,19 @@ class Note extends Model
 {
     use HasFactory;
 
-    /* protected $fillable = [
+    protected $fillable = [
         'title', 'content', 'active'
-    ]; */
+    ];
 
-    protected $guarded = [];
+    // protected $guarded = [];
 
     static function todas_las_notas(){
         return Note::where('active', true)->get();
+    }
+
+    static function nota_por_id($id){
+        return Note::where('id', $id)
+            ->where('active', true)
+            ->firstOrFail();
     }
 }

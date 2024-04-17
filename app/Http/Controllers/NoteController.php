@@ -54,7 +54,8 @@ class NoteController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('notes.show')
+            ->with('note', Note::nota_por_id($id));
     }
 
     /**

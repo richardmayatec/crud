@@ -45,7 +45,7 @@
                                 <td>{{ $note->title }}</td>
                                 <td>{{ $note->content }}</td>
                                 <td>
-                                    Actions
+                                    <a href="{{ route('notes.show', $note->id) }}" class="btn btn-secondary">Ver</a>
                                 </td>
                             </tr>
                         @empty
