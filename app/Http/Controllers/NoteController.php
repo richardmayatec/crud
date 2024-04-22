@@ -79,7 +79,14 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $note = Note::nota_por_id($id);
+
+        $note->update([
+            'title'     =>  $request->title,
+            'content'   =>  $request->content
+        ]);
+
+        return redirect()->route('notes.show', $id);
     }
 
     /**
@@ -90,6 +97,13 @@ class NoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Note::nota_por_id($id);
+
+        // $note->delete();
+        $note->update([
+            'active'     =>  false,
+        ]);
+
+        return redirect()->route('notes.index');
     }
 }
