@@ -43,7 +43,8 @@ class NoteController extends Controller
         ]);
 
         // return to_route('notes.index');
-        return redirect()->route('notes.index');
+        return redirect()->route('notes.index')
+            ->with('success', 'Nota creada exitosamente.');
     }
 
     /**

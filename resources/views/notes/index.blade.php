@@ -19,6 +19,16 @@
             </div>
         </div>
 
+        @if(session('success'))
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 col-md-9 col-lg-6">
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                </div>
+            </div>
+        @endif
+
         <div class="row mb-4">
             <div class="col text-end">
                 <a href="{{ route('notes.create') }}" class="btn btn-success">Nueva Nota +</a>
